@@ -1,23 +1,22 @@
 pipeline {
     agent any
-    stages {
 
-        stage('Build') {
+    stages {
+        stage('Build with Maven') {
             steps {
-                bat 'mvn clean package'
+                bat 'mvn clean install'
             }
         }
-        stage('Docker Build') {
+
+        stage('Build Docker Image') {
             steps {
-                bat 'docker build -t student-app .'
+                bat 'docker build -t devopsTwo .'
             }
         }
-        stage('Docker Run') {
+
+        stage('Run Docker Container') {
             steps {
-                bat 'docker stop student-app-container || true'
-                bat 'docker rm student-app-container || true'
-                bat 'docker run -d -p 8080:8081 --name student-app-container student-app'
+                bat 'docker run -d -p 8080:8081 --name devopsContainer devopsTwo'
             }
-        }
     }
- }
+}
