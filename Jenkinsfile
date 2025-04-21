@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build with Maven') {
             steps {
-                bat 'mvn clean install'
+                bat '"C:\Users\nagap\Downloads\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin\\mvn" clean install'
             }
         }
 
