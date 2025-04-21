@@ -4,19 +4,19 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh './mvnw clean package'
+                bat './mvnw clean package'
             }
         }
         stage('Docker Build') {
             steps {
-                sh 'docker build -t student-app .'
+                bat 'docker build -t student-app .'
             }
         }
         stage('Docker Run') {
             steps {
-                sh 'docker stop student-app-container || true'
-                sh 'docker rm student-app-container || true'
-                sh 'docker run -d -p 8080:8081 --name student-app-container student-app'
+                bat 'docker stop student-app-container || true'
+                bat 'docker rm student-app-container || true'
+                bat 'docker run -d -p 8080:8081 --name student-app-container student-app'
             }
         }
     }
