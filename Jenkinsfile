@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build with Maven') {
             steps {
-                bat '"C:\Users\nagap\Downloads\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin\\mvn" clean install'
+                bat 'mvn clean package'
             }
         }
 
@@ -18,6 +18,5 @@ pipeline {
             steps {
                 bat 'docker run -d -p 8080:8081 --name devopsContainer devopsTwo'
             }
-        }
     }
 }
