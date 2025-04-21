@@ -3,6 +3,7 @@ pipeline {
 
     tools {
         maven 'maven-3.9.9' // This refers to the name you gave in Global Tool Configuration
+        jdk 'Java21'
     }
 
     stages {
