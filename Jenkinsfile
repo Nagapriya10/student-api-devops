@@ -18,5 +18,6 @@ pipeline {
             steps {
                 bat 'docker run -d -p 8080:8081 --name devopsContainer devopsTwo'
             }
+        }
     }
 }
