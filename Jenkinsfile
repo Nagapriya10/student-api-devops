@@ -15,13 +15,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t devopsTwo .'
+                bat 'docker build -t devops-two .'
             }
         }
 
         stage('Run Docker Container') {
             steps {
-                bat 'docker run -d -p 8080:8081 --name devopsContainer devopsTwo'
+                bat 'docker run -d -p 8080:8081 --name devops-container devops-two'
             }
         }
     }
