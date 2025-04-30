@@ -12,6 +12,7 @@ public class StudentEntity {
     @Id
     private String id;
     private String name;
-    private String standard;
+    private String email;
+    private String phone;
 
 }

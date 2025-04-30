@@ -16,7 +16,8 @@ public class StudentService {
     public  StudentEntity StudentDetails(StudentDTO studentDTO) {
         StudentEntity student = new StudentEntity();
         student.setName(studentDTO.getName());
-        student.setStandard(studentDTO.getStandard());
+        student.setEmail(studentDTO.getEmail());
+        student.setPhone(studentDTO.getPhone());
 
         return studentRepository.save(student);
     }
