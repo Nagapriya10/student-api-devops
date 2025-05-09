@@ -49,6 +49,7 @@ pipeline {
         }
 
 
+
         stage('Trivy Scan Docker Image') {
             steps {
                 // Scans only for vulnerabilities (fast and safe)
