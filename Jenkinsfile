@@ -44,9 +44,10 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t devops-two .'
+                bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe" build -t devops-two .'
             }
         }
+
 
         stage('Trivy Scan Docker Image') {
             steps {
